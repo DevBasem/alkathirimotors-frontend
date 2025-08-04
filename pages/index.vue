@@ -1,21 +1,21 @@
 <template>
   <div>
-    <slider />
+    <Lazyslider />
 
-    <HomeSearch></HomeSearch>
+    <LazyHomeSearch></LazyHomeSearch>
 
-    <HomeTypes></HomeTypes>
+    <LazyHomeTypes></LazyHomeTypes>
 
-    <HomeAbout></HomeAbout>
+    <LazyHomeAbout></LazyHomeAbout>
 
-    <HomeWhy></HomeWhy>
+    <LazyHomeWhy></LazyHomeWhy>
 
-    <HomeBrands></HomeBrands>
+    <LazyHomeBrands></LazyHomeBrands>
 
-    <HomeLatest></HomeLatest>
+    <LazyHomeLatest></LazyHomeLatest>
 
-    <HomeNews></HomeNews>
-    <HomeSubscribe></HomeSubscribe>
+    <LazyHomeNews></LazyHomeNews>
+    <LazyHomeSubscribe></LazyHomeSubscribe>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ import { useGeneralStore } from "~/stores/general";
 import { useHomeStore } from "~/stores/home";
 let store = useGeneralStore();
 let storeHome = useHomeStore();
-let value = ref('10');
+let value = ref("10");
 onMounted(() => {
   store.fetchGeneral();
   storeHome.fetchBrands();

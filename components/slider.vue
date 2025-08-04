@@ -44,23 +44,23 @@ export default {
 
     useHead({
       script: [
-      //  {
-      //     src: "/jquery.js",
-      //   },
-      //     // {
-      //   //   innerHTML: `
-      //   //   var $ = jQuery.noConflict();
-      //   //   // let locale = "ar";
-      //   //   // let imagesBasePath = "https://altamwean.com/public/storage/Images";
-      //   // `,
-      //   //   type: "text/javascript",
-      //   // },
-      //   {
-      //     src: "https://test-slider.webstdy.net/revslider/public/assets/js/jquery.themepunch.tools.min.js",
-      //   },
-      //   {
-      //     src: "https://test-slider.webstdy.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js",
-      //   },
+        //  {
+        //     src: "/jquery.js",
+        //   },
+        //     // {
+        //   //   innerHTML: `
+        //   //   var $ = jQuery.noConflict();
+        //   //   // let locale = "ar";
+        //   //   // let imagesBasePath = "https://altamwean.com/public/storage/Images";
+        //   // `,
+        //   //   type: "text/javascript",
+        //   // },
+        //   {
+        //     src: "https://test-slider.webstdy.net/revslider/public/assets/js/jquery.themepunch.tools.min.js",
+        //   },
+        //   {
+        //     src: "https://test-slider.webstdy.net/revslider/public/assets/js/jquery.themepunch.revolution.min.js",
+        //   },
       ],
       link: [
         // {
@@ -180,10 +180,8 @@ export default {
 
     onMounted(() => {
       //getSripts();
-      setTimeout(() => {
-      }, 500);
+      setTimeout(() => {}, 500);
       getSlider();
-      
     });
     return { mainSlider };
   },
