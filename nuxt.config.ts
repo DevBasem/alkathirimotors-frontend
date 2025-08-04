@@ -1,6 +1,12 @@
 export default defineNuxtConfig({
-  modules: ["nuxt-swiper", "@nuxtjs/i18n", "nuxt-primevue" , "@pinia/nuxt"],
-  plugins:['~/plugins/pinia'],
+  modules: [
+    "nuxt-swiper",
+    "@nuxtjs/i18n",
+    "nuxt-primevue",
+    "@pinia/nuxt",
+    "nuxt-delay-hydration",
+  ],
+  plugins: ["~/plugins/pinia"],
   i18n: {
     // lazy: true,
     langDir: "locales",
@@ -38,6 +44,13 @@ export default defineNuxtConfig({
     },
   },
 
+  delayHydration: {
+    // enables nuxt-delay-hydration in dev mode for testing
+    // NOTE: you should disable this once you've finished testing, it will break HMR
+    debug: process.env.NODE_ENV === "development",
+    mode: "init",
+  },
+
   app: {
     // pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -71,7 +84,7 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          async:true,
+          async: true,
           innerHTML: `
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -81,7 +94,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         `,
         },
         {
-          async:true,
+          async: true,
           innerHTML: `
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQN2K7PF"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -129,8 +142,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           src: "/rome.standalone.min.js",
           async: true,
         },
-    
-       
       ],
     },
   },
